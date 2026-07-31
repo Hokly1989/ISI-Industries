@@ -546,7 +546,16 @@ function renderPage() {
 
 // Edit mode toggle
 const editToggle = document.getElementById('editToggle');
+const EDIT_PASSWORD = "isiedit";
 editToggle.addEventListener('change', () => {
+  if (editToggle.checked) {
+    const attempt = prompt("Enter the edit password to enable Edit Mode:");
+    if (attempt !== EDIT_PASSWORD) {
+      alert("Incorrect password. Edit Mode not enabled.");
+      editToggle.checked = false;
+      return;
+    }
+  }
   document.body.classList.toggle('edit-on', editToggle.checked);
 });
 
