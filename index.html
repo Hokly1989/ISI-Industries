@@ -646,7 +646,7 @@ const editToggle = document.getElementById('editToggle');
 const EDIT_PASSWORD = "ISI@2024"; // change this to whatever you want
 editToggle.addEventListener('change', () => {
   if (editToggle.checked) {
-    const attempt = prompt("Enter the edit password to enable Edit Mode:");
+    const attempt = prompt("Enter the password to enable Edit Mode:");
     if (attempt !== EDIT_PASSWORD) {
       alert("Incorrect password. Edit Mode not enabled.");
       editToggle.checked = false;
